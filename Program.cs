@@ -33,6 +33,7 @@ namespace DadJokeConsole
                 theTimer.Stop();
                 theTimer.Dispose();
                 Console.WriteLine("Thanks for playing.");
+                Console.WriteLine();
             }
             else
             {

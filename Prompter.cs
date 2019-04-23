@@ -16,9 +16,6 @@ namespace DadJokeConsole
 
         public Prompter() 
         {
-            searchRe = new Regex(@"^s", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-            randomRe = new Regex(@"^r", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-
             SearchForJokes = false;
             SearchTerm = null;
             GetRandomJokes = false;
