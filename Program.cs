@@ -57,19 +57,11 @@ namespace DadJokeConsole
 
         private static async Task SearchForJokesAsync(string searchTerm)
         {
-            if (searchTerm == null)
-            {
-                searchTerm = "";
-            }
-            else
-            {
-                searchTerm = searchTerm.Trim();
-            }
-
             try
             {
                 JokeSearchResults jokes = await iCHDJApi.SearchForJokesAsync(searchTerm);
                 renderJokes.ShowJokes(jokes, searchTerm);
+                Console.WriteLine();
             }
             catch (Exception e)
             {

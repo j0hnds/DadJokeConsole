@@ -68,18 +68,20 @@ namespace DadJokeConsole
             else
             {
 
-                int positionOfTerm = joke.IndexOf(searchTerm);
+                int positionOfTerm = joke.IndexOf(searchTerm, StringComparison.CurrentCultureIgnoreCase);
                 int startPos = 0;
                 while (positionOfTerm >= 0) {
                     string str = joke.Substring(startPos, positionOfTerm - startPos);
-                    // Write the leading bit of the string
+                    string term = joke.Substring(positionOfTerm, searchTerm.Length);
+
                     Console.Write(str);
                     Console.ForegroundColor = ConsoleColor.Black;
                     Console.BackgroundColor = ConsoleColor.White;
-                    Console.Write(searchTerm);
+                    Console.Write(term);
                     Console.ResetColor();
+
                     startPos = positionOfTerm + searchTerm.Length;
-                    positionOfTerm = joke.IndexOf(searchTerm, startPos);
+                    positionOfTerm = joke.IndexOf(searchTerm, startPos, StringComparison.CurrentCultureIgnoreCase);
                 }
 
                 if (startPos < joke.Length) {
